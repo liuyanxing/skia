@@ -1,0 +1,73 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "SurfaceDrawContext::drawShape",
+  "steps": [
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
+      "description": "drawShape入口",
+      "line": 1516
+    },
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
+      "description": "用合适的path render来画path",
+      "line": 1536
+    },
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
+      "description": "选择合适的path renderer",
+      "line": 1822
+    },
+    {
+      "file": "src/gpu/ganesh/GrDrawingManager.cpp",
+      "description": "插件path renderer chain",
+      "line": 977
+    },
+    {
+      "file": "src/gpu/ganesh/v1/PathRendererChain.cpp",
+      "description": "pather render chain初始化",
+      "line": 31
+    },
+    {
+      "file": "src/gpu/ganesh/GrDrawingManager.cpp",
+      "description": "获取合适renderer，没有合适的如果允许就用cpu渲染",
+      "line": 981
+    },
+    {
+      "file": "src/gpu/ganesh/v1/PathRendererChain.cpp",
+      "description": "根据drawType设置合适的stencilSupport",
+      "line": 78
+    },
+    {
+      "file": "src/gpu/ganesh/v1/PathRendererChain.cpp",
+      "description": "遍历renderer chain选择最合适的renderer\n- 如果支持stencil，则获取stencil支持情况，和最小的支持对比，小就跳过这个renderer\n- 根据drawArg调用renderer的canDrawPath方法获取renderer对path的支持情况，返回kYes，kNo，kAsBackup三种情况，kNo跳过  \n如果之前有backup并且这个也是backup跳过继续找；如果是kYes，则代表找到来，直接break掉",
+      "line": 93
+    },
+    {
+      "file": "src/gpu/ganesh/v1/PathRenderer.h",
+      "description": "通过onCanDrawPath这个虚函数调用不同renderer的onCanDrawPath",
+      "line": 113
+    },
+    {
+      "file": "src/gpu/ganesh/ops/TriangulatingPathRenderer.cpp",
+      "description": "triangulating Path renderer draw判断\n- 如果surface使用的dynamic MSAA，返回kNo\n- 如果style不是simpleFill或者path是凸包返回kNo，凸包有更好的renderer\n- 如果style是MSAA但是shape的hasUnstyledKey返回false则返回kNo // todo",
+      "line": 578
+    },
+    {
+      "file": "src/gpu/ganesh/ops/DefaultPathRenderer.cpp",
+      "description": "使用default path renderer条件，只能作为backup renderer\n- stencil buffer\n- 只支持MSAA\n- 非hairline只支持simple fill style",
+      "line": 774,
+      "selection": {
+        "start": {
+          "line": 773,
+          "character": 48
+        },
+        "end": {
+          "line": 773,
+          "character": 61
+        }
+      }
+    }
+  ],
+  "ref": "main",
+  "isPrimary": true
+}
