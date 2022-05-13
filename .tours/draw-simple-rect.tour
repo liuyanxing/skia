@@ -1,0 +1,37 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "draw simple rect",
+  "steps": [
+    {
+      "file": "example/HelloWorld.cpp",
+      "description": "调用dreawRect api",
+      "line": 100
+    },
+    {
+      "file": "src/core/SkCanvas.cpp",
+      "description": "超过画布范围直接返回",
+      "line": 2005
+    },
+    {
+      "file": "src/gpu/ganesh/v1/Device.cpp",
+      "description": "调用gpu device的drawReact接口",
+      "line": 442
+    },
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
+      "description": "简单矩形直接调用fillRectToRect",
+      "line": 673
+    },
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
+      "description": "直接调用drawFilledQuad",
+      "line": 757
+    },
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
+      "description": "调用addDrawOp",
+      "line": 558
+    }
+  ],
+  "ref": "7b1c07e5a3628a3a04ee8a650468c9d0769e736a"
+}

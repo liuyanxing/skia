@@ -99,6 +99,8 @@ void HelloWorld::onPaint(SkSurface* surface) {
     SkRect rect = SkRect::MakeXYWH(10, 10, 128, 128);
     canvas->drawRect(rect, paint);
 
+    return;
+
     // Set up a linear gradient and draw a circle
     {
         SkPoint linearPoints[] = { { 0, 0 }, { 300, 300 } };
