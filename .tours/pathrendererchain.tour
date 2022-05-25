@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "pathRendererChain",
+  "steps": [
+    {
+      "file": "src/gpu/ganesh/GrDrawingManager.cpp",
+      "description": "chain构造入口",
+      "line": 978
+    },
+    {
+      "file": "src/gpu/ganesh/v1/PathRendererChain.cpp",
+      "description": "chain的构造函数，option为default，几种都有一共有\r\ndashLine, AAConvex, Hariline, AALinearizing, Altas\r\nsmall, triangulating, tessellation\r\n8种pathRenderer, 选择pathRenderer时按顺序选择合适的，有\r\n合适的直接返回，如果是backup就继续查找，没找到就用backup\r\n每个pathRenderer都有自己的使用条件\r\n",
+      "line": 31
+    },
+    {
+      "file": "src/gpu/ganesh/v1/PathRendererChain.cpp",
+      "description": "AAConvex通过条件：shaderCaps支持（不懂），AA是converage，simpleFill, 不是inverseFilled, 凸包，shape知道方向（不懂）    \r\nAALinearizingConvex拒绝条件: AA不是converage, 不是凸包, 有pathEffect, 是inverseFilled, width和height小于等于0，stroke相关(不懂), viewMatrix.hasPerspective返回trure（不懂）    \r\n",
+      "line": 101
+    }
+  ],
+  "ref": "lyx_note"
+}
