@@ -1,0 +1,42 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "drawPath",
+  "steps": [
+    {
+      "file": "src/core/SkCanvas.cpp",
+      "description": "入口，调用内部的onDrawPath接口",
+      "line": 1831
+    },
+    {
+      "file": "src/core/SkCanvas.cpp",
+      "description": "判断path是否超出画布，超出则返回",
+      "line": 2133
+    },
+    {
+      "file": "src/core/SkCanvas.cpp",
+      "description": "调用Device的drawPath函数，这里的paint就是传入的paint",
+      "line": 2149
+    },
+    {
+      "file": "src/gpu/ganesh/v1/Device.cpp",
+      "description": "如果没有蒙版调用surface的drawPath",
+      "line": 669,
+      "selection": {
+        "start": {
+          "line": 654,
+          "character": 5
+        },
+        "end": {
+          "line": 654,
+          "character": 22
+        }
+      }
+    },
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
+      "description": "用path呵呵style生成shape，再调用drawShape绘制",
+      "line": 1513
+    }
+  ],
+  "ref": "lyx_note"
+}

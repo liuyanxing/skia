@@ -99,8 +99,6 @@ void HelloWorld::onPaint(SkSurface* surface) {
     SkRect rect = SkRect::MakeXYWH(10, 10, 128, 128);
     canvas->drawRect(rect, paint);
 
-    return;
-
     // Set up a linear gradient and draw a circle
     {
         SkPoint linearPoints[] = { { 0, 0 }, { 300, 300 } };
@@ -113,6 +111,21 @@ void HelloWorld::onPaint(SkSurface* surface) {
 
         // Detach shader
         paint.setShader(nullptr);
+    }
+
+    {
+        SkPaint paint;
+        paint.setStyle(SkPaint::kStroke_Style);
+        paint.setStrokeWidth(8);
+        paint.setColor(0xff4285F4);
+        paint.setAntiAlias(true);
+        paint.setStrokeCap(SkPaint::kRound_Cap);
+
+        SkPath path;
+        path.moveTo(10, 10);
+        path.quadTo(256, 64, 128, 128);
+        path.quadTo(10, 192, 250, 250);
+        canvas->drawPath(path, paint);
     }
 
     // Draw a message with a nice black paint
