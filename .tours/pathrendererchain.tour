@@ -14,7 +14,7 @@
     },
     {
       "file": "src/gpu/ganesh/v1/PathRendererChain.cpp",
-      "description": "AAConvex通过条件：shaderCaps支持（不懂），AA是converage，simpleFill, 不是inverseFilled, 凸包，shape知道方向（不懂）    \r\nAALinearizingConvex拒绝条件: AA不是converage, 不是凸包, 有pathEffect, 是inverseFilled, width和height小于等于0，stroke相关(不懂), viewMatrix.hasPerspective返回trure（不懂）    \r\n",
+      "description": "AAConvex通过条件：shaderCaps支持（不懂），AA是converage，simpleFill, 不是inverseFilled, 凸包，shape知道方向（不懂）    \r\nAALinearizingConvex拒绝条件: AA不是converage, 不是凸包, 有pathEffect, 是inverseFilled, width和height小于等于0，stroke相关(不懂), viewMatrix.hasPerspective返回trure（不懂）\r\nAtlas通过条件：simpleFill, AA不是none, fproxy->numSamples() == 1或者不是凸包, 没有pathEffect,fviewMatrix没有perspective, 大小合适(祥见具体计算过程)     \r\nTriangulat拒绝条件：不是dynamicMSAA, 不是simpleFill或者是凸包, 如果没有AA或者AA是MSAA则需要shape有key以便缓存，如果是Coverage AA则path的verb数量需要小于10\r\n    \r\n",
       "line": 101
     }
   ],
