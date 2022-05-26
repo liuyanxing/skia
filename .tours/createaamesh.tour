@@ -1,0 +1,72 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "createAAMesh",
+  "steps": [
+    {
+      "file": "src/gpu/ganesh/ops/TriangulatingPathRenderer.cpp",
+      "description": "入口",
+      "line": 347
+    },
+    {
+      "file": "src/gpu/ganesh/ops/TriangulatingPathRenderer.cpp",
+      "description": "根据视口变换path",
+      "line": 355
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrAATriangulator.h",
+      "description": "将path转化成triangle",
+      "line": 16
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrAATriangulator.cpp",
+      "description": "将多边形转换成三角形，三角化后的数据存在了vertexAllocator里",
+      "line": 672
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "获取contourCnt，一条path就是一个contour(没有move，move之后是个新的contour)",
+      "line": 1612
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "将轮廓转换成多边形",
+      "line": 1624
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "把轮廓转成多边形",
+      "line": 1542
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "按x或y给顶点排序",
+      "line": 1550
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "把轮廓转成mesh  \r\n先处理顶点数据  \r\n",
+      "line": 1507
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "用轮廓的顶点生产edge，但是直接把顶点放入mesh中，啥  \r\n都没做，不是很懂，返回的edge也没用",
+      "line": 1189
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "处理轮廓的顶点数据，包括clamp位置, 去掉重复顶点，去掉距离等于0中的一个点等",
+      "line": 1133
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "将path细分成线段组成的轮廓保存到contours中",
+      "line": 528
+    },
+    {
+      "file": "src/gpu/ganesh/geometry/GrTriangulator.cpp",
+      "description": "二阶贝塞尔曲线细分",
+      "line": 478
+    }
+  ],
+  "ref": "lyx_note"
+}
