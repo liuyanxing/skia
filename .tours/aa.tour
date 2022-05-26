@@ -1,0 +1,17 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "AA",
+  "steps": [
+    {
+      "file": "include/core/SkSurfaceProps.h",
+      "description": "flags参数设置是否使用DynamicMSAA  \r\nUse internal MSAA to render to non-MSAA GPU surfaces.  \r\n使用内部的MSAA到不支持MSS的GPU上",
+      "line": 63
+    },
+    {
+      "file": "src/gpu/ganesh/v1/SurfaceDrawContext_v1.h",
+      "description": "如果numSamples大于1或者可以使用DynamicMSAA则返回MSAA  \r\n否则如果要AA则返回Converage",
+      "line": 601
+    }
+  ],
+  "ref": "lyx_note"
+}

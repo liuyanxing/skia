@@ -127,7 +127,6 @@ void HelloWorld::onPaint(SkSurface* surface) {
         path.lineTo(50, 50);
         path.lineTo(100, 100);
         path.lineTo(10, 100);
-        path.close();
         // path.quadTo(10, 192, 250, 250);
         path.close();
         canvas->drawPath(path, paint);
