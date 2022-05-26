@@ -1,0 +1,27 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "surface initialize",
+  "steps": [
+    {
+      "file": "src/image/SkSurface_Gpu.cpp",
+      "description": "surface创建，设置sampleCnt，surfaceProps等",
+      "line": 600
+    },
+    {
+      "file": "include/gpu/GrBackendSurface.h",
+      "description": "设置sampleCnt等，项目里为0",
+      "line": 463,
+      "selection": {
+        "start": {
+          "line": 503,
+          "character": 5
+        },
+        "end": {
+          "line": 503,
+          "character": 26
+        }
+      }
+    }
+  ],
+  "ref": "lyx_note"
+}
