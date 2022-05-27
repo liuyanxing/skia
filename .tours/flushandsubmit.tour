@@ -1,0 +1,37 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "flushAndSubmit",
+  "steps": [
+    {
+      "file": "src/image/SkSurface_Gpu.cpp",
+      "description": "入口",
+      "line": 715
+    },
+    {
+      "file": "src/image/SkSurface_Gpu.cpp",
+      "description": "实际入口",
+      "line": 212
+    },
+    {
+      "file": "src/gpu/ganesh/GrDirectContextPriv.cpp",
+      "description": "调用drawingManager的flushSurfaces",
+      "line": 63
+    },
+    {
+      "file": "src/gpu/ganesh/GrDrawingManager.cpp",
+      "description": "flush再drawingManager中实现",
+      "line": 506
+    },
+    {
+      "file": "src/gpu/ganesh/GrDrawingManager.cpp",
+      "description": "执行render task",
+      "line": 232
+    },
+    {
+      "file": "src/gpu/ganesh/GrDrawingManager.cpp",
+      "description": "执行",
+      "line": 320
+    }
+  ],
+  "ref": "lyx_note"
+}
