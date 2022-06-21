@@ -1,0 +1,92 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "CreateProgram",
+  "steps": [
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "创建program入口  \r\ndesc用与创建program的cache key，比如是否需要stencil, 原点，颜色格式，目前不是很了解",
+      "line": 49
+    },
+    {
+      "file": "src/gpu/ganesh/glsl/GrGLSLShaderBuilder.cpp",
+      "description": "shader构造",
+      "line": 20
+    },
+    {
+      "file": "src/gpu/ganesh/glsl/GrGLSLShaderBuilder.cpp",
+      "description": "生成shader",
+      "line": 326,
+      "selection": {
+        "start": {
+          "line": 336,
+          "character": 26
+        },
+        "end": {
+          "line": 336,
+          "character": 36
+        }
+      }
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "调用finalize完成program构建",
+      "line": 74
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "调用createProgram创建program",
+      "line": 214
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "生成skgl shader",
+      "line": 227
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "更新cache",
+      "line": 255
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "将sksl编译成glsl",
+      "line": 331,
+      "selection": {
+        "start": {
+          "line": 326,
+          "character": 13
+        },
+        "end": {
+          "line": 326,
+          "character": 17
+        }
+      }
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "编译fragment shader，后面vertex shader同理",
+      "line": 345
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "设置vertex的stride, offset，location, 并调用BindAttribLocation绑定attribute的location",
+      "line": 374
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "暂时没用",
+      "line": 376
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "shader缓存，缓存的是glsl",
+      "line": 404
+    },
+    {
+      "file": "src/gpu/ganesh/gl/builders/GrGLProgramBuilder.cpp",
+      "description": "创建program并返回",
+      "line": 406
+    }
+  ],
+  "ref": "lyx_note"
+}
