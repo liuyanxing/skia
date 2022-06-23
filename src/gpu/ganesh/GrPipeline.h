@@ -30,6 +30,8 @@ class GrTextureEffect;
  * This immutable object contains information needed to build a shader program and set API
  * state for a draw. It is used along with a GrGeometryProcessor and a source of geometric
  * data to draw.
+ * 包含了构造shader program的不可变对象，在draw中设置API的状态。和GrGeometryProcessor以及几何数据
+ * 一起使用
  */
 class GrPipeline {
 public:

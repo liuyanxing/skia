@@ -1,0 +1,32 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "createProgramInfo",
+  "steps": [
+    {
+      "file": "src/gpu/ganesh/ops/FillRectOp.cpp",
+      "description": "创建program info, 实现在onCreateProgramInfo里",
+      "line": 312
+    },
+    {
+      "file": "src/gpu/ganesh/ops/FillRectOp.cpp",
+      "description": "创建programInfo",
+      "line": 211
+    },
+    {
+      "file": "src/gpu/ganesh/ops/GrSimpleMeshDrawOpHelperWithStencil.cpp",
+      "description": "create",
+      "line": 56
+    },
+    {
+      "file": "src/gpu/ganesh/ops/GrSimpleMeshDrawOpHelper.cpp",
+      "description": "create",
+      "line": 187
+    },
+    {
+      "file": "src/gpu/ganesh/ops/GrSimpleMeshDrawOpHelper.cpp",
+      "description": "create",
+      "line": 201
+    }
+  ],
+  "ref": "lyx_note"
+}

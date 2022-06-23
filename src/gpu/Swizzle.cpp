@@ -11,6 +11,9 @@
 
 namespace skgpu {
 
+/*
+ * rgba的排列方式
+*/
 void Swizzle::apply(SkRasterPipeline* pipeline) const {
     SkASSERT(pipeline);
     switch (fKey) {

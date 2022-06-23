@@ -17,6 +17,10 @@
  * offset from device-space to the space of the texture. When framebuffer fetch is not available, a
  * GrDstProxyView may be used to support blending in the fragment shader/xfer processor.
  */
+/**
+ * GrDstProxyView拥有一个包含渲染destination像素值的纹理，以及设备space到纹理space的整数偏移。当frambuffer fetrch
+ * 不可用时，GrDstProxyView可以用来在framgment shader中支持blending
+ */
 class GrDstProxyView {
 public:
     GrDstProxyView() {}

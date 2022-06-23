@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "flushState",
+  "steps": [
+    {
+      "file": "src/gpu/ganesh/GrDrawingManager.cpp",
+      "description": "创建flushState",
+      "line": 163
+    }
+  ],
+  "ref": "lyx_note"
+}

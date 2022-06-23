@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "program description",
+  "steps": [
+    {
+      "file": "src/gpu/ganesh/gl/GrGLCaps.cpp",
+      "description": "根据programInfo生成program desc",
+      "line": 4838
+    },
+    {
+      "file": "src/gpu/ganesh/GrProgramDesc.cpp",
+      "description": "生成program info对应的key，用于hash",
+      "line": 175
+    },
+    {
+      "file": "src/gpu/ganesh/GrProgramDesc.cpp",
+      "description": "根据geoproc，pipeline，xferProcessor等生成key",
+      "line": 145
+    }
+  ],
+  "ref": "lyx_note"
+}
