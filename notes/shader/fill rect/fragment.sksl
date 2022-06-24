@@ -1,0 +1,12 @@
+flat in half4 vcolor_S0;
+out half4 sk_FragColor;
+void main() {
+	// Stage 0, QuadPerEdgeAAGeometryProcessor
+	half4 outputColor_S0;
+	outputColor_S0 = vcolor_S0;
+	const half4 outputCoverage_S0 = half4(1);
+	{
+		// Xfer Processor: Porter Duff
+		sk_FragColor = outputColor_S0 * outputCoverage_S0;
+	}
+}

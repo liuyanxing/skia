@@ -1,0 +1,9 @@
+uniform float4 sk_RTAdjust;
+in float2 position;
+in half4 color;
+flat out half4 vcolor_S0;
+void main() {
+	// Primitive Processor QuadPerEdgeAAGeometryProcessor
+	vcolor_S0 = color;
+	sk_Position = position.xy01;
+}

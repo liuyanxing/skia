@@ -24,9 +24,15 @@ void GrShaderVar::appendDecl(const GrShaderCaps* shaderCaps, SkString* out) cons
     if (!fLayoutQualifier.isEmpty()) {
         out->appendf("layout(%s) ", fLayoutQualifier.c_str());
     }
+
+    /*
+     * flat等
+    */
     if (!fExtraModifiers.isEmpty()) {
         out->appendf("%s ", fExtraModifiers.c_str());
     }
+
+    // in out uniform inout
     if (this->getTypeModifier() != TypeModifier::None) {
         out->appendf("%s ", type_modifier_string(this->getTypeModifier()));
     }
