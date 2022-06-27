@@ -75,14 +75,18 @@ bool GrGLSLProgramBuilder::emitAndInstallPrimProc(SkString* outputColor, SkStrin
 
     // Program builders have a bit of state we need to clear with each effect
     this->advanceStage();
-    this->nameExpression(outputColor, "outputColor");
-    this->nameExpression(outputCoverage, "outputCoverage");
+    this->nameExpression(outputColor, "outputColor"); // outputColor_S0
+    this->nameExpression(outputCoverage, "outputCoverage"); // outputCoverage_S0
 
     SkASSERT(!fUniformHandles.fRTAdjustmentUni.isValid());
+    // We need to emit the RT adjustment uniform if the program has a RT adjustment.
+    // uniform float4 sk_RTAdjust;
     fUniformHandles.fRTAdjustmentUni = this->uniformHandler()->addUniform(
             nullptr, kVertex_GrShaderFlag, SkSLType::kFloat4, SkSL::Compiler::RTADJUST_NAME);
 
+	// code: // Stage 0, QuadPerEdgeAAGeometryProcessor
     fFS.codeAppendf("// Stage %d, %s\n", fStageIndex, geomProc.name());
+    // code: // Primitive Processor QuadPerEdgeAAGeometryProcessor
     fVS.codeAppendf("// Primitive Processor %s\n", geomProc.name());
 
     SkASSERT(!fGPImpl);

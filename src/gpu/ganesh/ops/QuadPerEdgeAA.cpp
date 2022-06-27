@@ -674,8 +674,11 @@ public:
                 fTextureColorSpaceXformHelper.emitCode(args.fUniformHandler,
                                                        gp.fTextureColorSpaceXform.get());
 
+                // 将GeometryProcessor中顶点属性添加到varyingHandler中
+                // position, color两个attribute
                 args.fVaryingHandler->emitAttributes(gp);
 
+                // 暂时略过
                 if (gp.fCoverageMode == CoverageMode::kWithPosition) {
                     // Strip last channel from the vertex attribute to remove coverage and get the
                     // actual position
@@ -705,7 +708,11 @@ public:
                 if (gp.fColor.isInitialized()) {
                     SkASSERT(gp.fCoverageMode != CoverageMode::kWithColor || !gp.fNeedsPerspective);
                     // The color cannot be flat if the varying coverage has been modulated into it
+                    // code: half4 outputColor_S0;
                     args.fFragBuilder->codeAppendf("half4 %s;", args.fOutputColor);
+
+                    // vs: vcolor_S0 = color;
+                    // fs: outputColor_S0 = vcolor_S0;
                     args.fVaryingHandler->addPassThroughAttribute(
                             gp.fColor.asShaderVar(),
                             args.fOutputColor,
@@ -815,6 +822,7 @@ public:
                 } else {
                     // Set coverage to 1, since it's either non-AA or the coverage was already
                     // folded into the output color
+                    // code: const half4 outputCoverage_S0 = half4(1);
                     SkASSERT(!gp.fGeomSubset.isInitialized());
                     args.fFragBuilder->codeAppendf("const half4 %s = half4(1);",
                                                    args.fOutputCoverage);
