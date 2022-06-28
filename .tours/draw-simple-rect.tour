@@ -31,6 +31,16 @@
       "file": "src/gpu/ganesh/v1/SurfaceDrawContext.cpp",
       "description": "调用addDrawOp",
       "line": 558
+    },
+    {
+      "file": "src/gpu/ganesh/ops/FillRectOp.cpp",
+      "description": "make fill rect op",
+      "line": 472
+    },
+    {
+      "file": "src/gpu/ganesh/ops/FillRectOp.cpp",
+      "description": "fill rect op implement",
+      "line": 82
     }
   ],
   "ref": "lyx_note"
